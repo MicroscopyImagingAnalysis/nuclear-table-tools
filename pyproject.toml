@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nuclear-table-tools"
+version = "0.1.0"
+description = "Filtering, joining and preparation of microscopy feature tables"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = ["numpy", "pandas"]
+
+[project.optional-dependencies]
+analysis = ["matplotlib", "scikit-learn", "scipy", "seaborn", "umap-learn"]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+nuclear_table_tools = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
